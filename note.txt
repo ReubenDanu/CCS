@@ -1,0 +1,17 @@
+view:
+user part:
+-login & register ✅
+-dashboard ✅
+-form crud ✅
+
+temp note:
+session vars:
+user
+page
+nik
+
+
+admin part:
+-login & register ✅
+-dashboard ~all, single, search
+-form crud
