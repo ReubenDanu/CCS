@@ -1,0 +1,495 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+
+* {
+	font-family: 'Poppins', sans-serif;
+}
+
+.navbar {
+	background: #f3eee4;
+	padding: 1rem 2rem;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 10;
+}
+
+.logo a {
+
+	color: black;
+	text-decoration: none;
+}
+
+.logo .icon {
+	max-width: 100%;
+	width: 60px;
+	height: auto;
+	object-fit: cover;
+}
+
+ul {
+	list-style-type: none;
+}
+
+.navbar .menu{
+	flex: 1;
+}
+
+.navbar .menu .link {
+	margin: 1rem;
+	color: black;
+	letter-spacing: 1px;
+	text-decoration: unset;
+	font-weight: 700;
+	font-size: 1rem;
+	font-size: clamp(.88rem, .83rem + .24vw, 1rem);
+	font-family: atkinson_hyperlegible, Arial, sans-serif;
+	text-underline-offset: 2px;
+}
+
+.navbar .menu .link:hover {
+	text-decoration: underline;
+}
+
+.navbar .account .account-link {
+	border: 1px solid black;
+	color: black;
+	font-size: 1rem;
+	text-decoration: unset;
+	letter-spacing: 1px;
+	font-weight: 700;
+	padding: 10px 14px;
+}
+
+.navbar .account .account-link i {
+	margin-right: 8px;
+}
+
+.navbar .account .account-link i:hover {
+	color: white;
+}
+
+.navbar .account .account-link:hover {
+	text-decoration: underline;
+	text-underline-offset: 2px;
+	background: black;
+	color: white;
+	box-shadow: 2px 2px 2px white;
+}
+
+
+main.container {
+	position: relative;
+	top: 88px;
+}
+
+.container .main-title {
+	text-align: center;
+	margin-top: 5rem;
+	font-size: 1.8rem;
+	font-weight: 500;
+	color: black;
+	line-height: 1.9;
+	font-family: Arial, Helvetica, sans-serif;
+	width: 60%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 50px;
+}
+
+.container .main-title .second {
+	font-weight: 300;
+	font-size: 24px;
+}
+
+form {
+	font-family: Arial, Helvetica, sans-serif;
+	background: white;
+	box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.2);
+	border-radius: 5px;
+	margin: auto;
+	padding: 1.6rem 2.8rem;
+	width: 55%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 3rem;
+}
+
+form .title {
+	margin-top: 1rem;
+	margin-bottom: 3rem;
+	background-color: rgb(208, 2, 27);
+	color: white;
+	padding: 8px 10px;
+	width: 100%;
+	font-size: 1.2rem;
+	font-weight: 700;
+}
+
+form .mini-guide {
+	margin-bottom: .5rem;
+	font-size: 12px;
+	font-weight: 600;
+	color: rgb(51, 51, 51);
+	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.complaint-input-category {
+	width: 100%;
+	padding-bottom: 16px;
+}
+
+
+input {
+	font-size: 1.1rem;
+	display: block;
+	width: 100%;
+	padding: 12px 14px;
+	border: 1px solid rgb(204, 204, 204);
+	transition: border 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+}
+
+
+
+input:hover {
+	border: 1px solid rgb(0, 0, 0);
+}
+
+input:focus {
+	border: 1px solid rgba(255, 0, 0, 1.0);
+	box-shadow: 0 0 0px 2px rgba(208, 2, 27, 0.3);
+	outline: none;
+}
+
+.date-group {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.date-picker-x {
+	top: 50px !important;
+	left: 0;
+}
+
+.date-picker-x.to-top {
+	top: auto !important;
+}
+
+.form-button {
+	width: 100%;
+	background: rgb(0, 0, 0);
+	margin-bottom: 1rem;
+}
+
+.form-button:hover {
+	background: rgb(60, 60, 60);
+}
+
+.form-button button {
+	padding: 12px 14px;
+	background: transparent;
+	color: white;
+	font-size: 1.2rem;
+	letter-spacing: 1px;
+	text-transform: capitalize;
+	border: none;
+	outline: none;
+	width: inherit;
+	height: inherit;
+	text-align: center;
+	cursor: pointer;
+}
+
+.form-button button:hover {
+	color: rgb(180, 180, 180);
+}
+
+
+[type="date"],
+[type="file"] {
+	cursor: pointer;
+	placeholder: "ikan";
+	padding: 16px 20px;
+
+}
+
+.guide {
+	scroll-margin-top: 6rem;
+	position: relative;
+	margin: auto;
+	max-width: 100%;
+	width: 100%;
+	height: auto;
+	margin: 120px 0;
+	text-align: center;
+}
+
+.guide .container {
+	display: flex;
+	align-items: baseline;
+	justify-content: center;
+	margin: 50px 0;
+	padding-bottom: 100px;
+	flex-wrap: nowrap;
+	gap: 20px;
+}
+
+.guide .container .step {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	max-width: 100%;
+	width: 350px;
+	text-align: center;
+}
+
+.progress {
+	position: absolute;
+	top: 50%;
+	left: calc(50% + 37px);
+
+
+}
+
+.progress-bar {
+	height: 1px;
+	width: 300px;
+	background-color: #ddd;
+}
+
+
+.guide .icon {
+	padding: 14px;
+	font-size: 1.4rem;
+	border-radius: 100%;
+	width: 74px;
+	height: 74px;
+	color: black;
+	background: #f3eee4;
+	position: relative;
+}
+
+.guide .icon i {
+	font-size: 1.4rem;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.guide .title {
+	font-size: 16px;
+	padding: 20px 5px 0;
+}
+
+.guide .description {
+	color: #666;
+	font-size: 14px;
+	padding: 0 5px;
+}
+
+
+.about {
+	text-align: center;
+	margin-bottom: 120px;
+	height: min-content;
+}
+
+.about h1 {
+	margin-bottom: 60px;
+}
+
+.about p {
+	font-weight: 500;
+	font-size: 1.2rem;
+	letter-spacing: 1.2px;
+}
+
+
+.faq {
+	margin: 40px 0;
+	overflow: hidden;
+	text-align: center;
+}
+
+.faq .container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: auto;
+	padding: 80px 0;
+	margin: 0;
+	margin-bottom: 120px;
+	gap: 1px;
+	text-align: center;
+
+}
+
+.faq .container .box {
+	max-width: 100%;
+	width: 70%;
+	height: auto;
+	margin: 0;
+	text-align: left;
+	color: black;
+	border: 1px solid rgb(51, 51, 51);
+	border-width: 1px;
+	border-radius: 4px;
+	cursor: pointer;
+	overflow: hidden;
+	padding: 5px;
+	box-shadow: inset 0 10px 0 0 black, inset -10px 0 0 0 black, inset 0 -10px 0 0 black, inset 10px 0 0 0 black;
+}
+
+.faq .container .box .header {
+	background: black;
+	color: white;
+	text-shadow: -1px -1px 0 #000,
+		1px -1px 0 #000,
+		-1px 1px 0 #000,
+		1px 1px 0 #000;
+	font-size: 1.4rem;
+	font-weight: 500;
+	text-transform: capitalize;
+	letter-spacing: 2px;
+	margin: 0;
+	width: 100%;
+	border-width: 1px 1px 0 0;
+	overflow: auto;
+	height: max-content;
+	white-space: nowrap;
+	text-transform: capitalize;
+	text-overflow: none;
+	line-height: 45.4px;
+	position: relative;
+}
+
+
+
+.faq .container .box .header.hidden {
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	height: 45.5px;
+}
+
+.faq .container .box .content {
+	display: block;
+	text-align: left;
+	font-size: 1rem;
+	background: black;
+	color: white;
+
+}
+
+
+.faq .container .content.hidden {
+	width: 0;
+	height: 0;
+	transition: ease-in-out 300ms;
+	display: none;
+}
+
+.faq .icon {
+	position: absolute;
+	top: 50%;
+	right: 2%;
+	transform: translateY(-50%) rotate(180deg);
+	border: none;
+	border-radius: 0;
+	padding: 0;
+	margin: 0;
+	background: transparent;
+	color: white;
+	display: block;
+	width: auto;
+	height: auto;
+	transition: ease-in-out 300ms;
+	background: black;
+}
+
+.faq .icon i {
+	display: block;
+	position: relative;
+	margin-left: auto;
+	font-size: 2.1rem;
+	top: 0;
+	left: 0;
+	transform: none;
+}
+
+.faq .icon.hidden {
+	transform: translateY(-50%) rotate(0);
+}
+
+.faq .bg {
+	background: black;
+	width: 50px;
+	height: 57.4px;
+	position: absolute;
+	top: 50%;
+	border-right: 6px;
+	right: -55.8137%;
+	transform: translateY(-50%) rotate(180deg);
+	border: none;
+	border-radius: 0;
+	padding: 0;
+	margin: 0;
+	z-index: -22;
+
+}
+
+
+.banner {
+	display: grid;
+	justify-items: center;
+	align-items: center;
+	justify-content: center;
+	margin: auto;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-rows: auto;
+	grid-template-areas: "logo name name name" "logo name name name" "logo contact contact contact" "logo contact contact contact";
+	padding: 60px 0;
+	background-color: #0d1117;
+	color: white;
+}
+
+.banner img {
+	grid-area: logo;
+}
+
+.banner p {
+	grid-area: name;
+	font-size: 3rem;
+	font-weight: 600;
+
+}
+
+.banner .contact {
+	grid-area: contact;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: center;
+	width: max-content;
+	gap: 50px;
+}
+
+.banner .contact a {
+	font-size: 2rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	text-decoration: none;
+}

@@ -1,0 +1,7 @@
+user:
+index
+dashboard
+profile
+input-form
+inbox
+report
