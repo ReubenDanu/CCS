@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
-    <link rel="stylesheet" href="myprofile.css">
-    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="./ASSETS/CSS/myprofile.css">
+    <link rel="stylesheet" href="./ASSETS/CSS/reset.css">
 </head>
 <body>
     <?php
-        include('./navbar.php.html');
+        include('./COMPONENT/navbar.php.html');
     ?>
     <main>
         <?php
@@ -52,7 +52,7 @@
             </div>
         </main>
     <?php
-        include('footer.php.html');
+        include('./ASSETS/CSS/footer.php.html');
     ?>
     </body>
     </html>
