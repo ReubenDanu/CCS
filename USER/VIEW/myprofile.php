@@ -11,6 +11,8 @@
 <body>
     <?php
         include('./COMPONENT/navbar.php.html');
+        include('../LOGIC/auth.php');
+        include('../LOGIC/page.php');
     ?>
     <main>
         <?php
@@ -52,7 +54,7 @@
             </div>
         </main>
     <?php
-        include('./ASSETS/CSS/footer.php.html');
+        include('./COMPONENT/footer.php.html');
     ?>
     </body>
     </html>
