@@ -42,15 +42,8 @@
 }
 
 .title h1{
-    font-size: 1.7rem;
+    font-size: 1.2rem;
     font-weight: 600;
-}
-
-.title h1:first-child {
-    font-size: 1.9rem;
-    font-weight: 600;
-    position: relative;
-    bottom: 30px;
 }
 
 .container form .rectangle{
@@ -131,27 +124,4 @@
     visibility: hidden;
     width: 0;
     height: 0;
-}
-
-.warning-banner{
-    position: absolute;
-    display: block;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 14px 20px;
-    background-color: red;
-}
-
-.warning-banner:hover{
-    cursor: pointer;
-}
-
-.warning-banner span{
-    display: block;
-    color: white;
-    font-size: 1.4rem;
-    text-align: center;
-    margin: auto;
-    text-transform: capitalize;
 }

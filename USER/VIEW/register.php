@@ -13,7 +13,7 @@
     <div class="container">
       <div class="icon"></div>
       <div class="title"><h1>Sign Up</h1></div>
-      <form action="../LOGIC/register.php" method="POST">
+      <form action="../LOGIC/register.php">
         <div class="box">
           <input
             type="text"

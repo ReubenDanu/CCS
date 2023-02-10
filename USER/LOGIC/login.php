@@ -1,30 +1,32 @@
 <?php
-require_once('../../BASE/connection.php');
+include('connection.php');
 session_start();
-if($_SESSION['login'] == 'login'){
-    header('location:../VIEW/'.$_SESSION['page']);
-}
 $username = $_POST['username'];
 $password = $_POST['password'];
-$sql = "SELECT * FROM community WHERE username = '$username' AND password ='$password'";
+$sql = "SELECT * FROM community WHERE username = ASDFASDF AND password SDFGSDFG";
+
 $queryResult = $mysqli->query($sql);
-$rows = $queryResult->num_rows;
+$rows = mysqli_num_rows($queryResult);
 
 if($rows == 0){
-    $page = $_SESSION['page'];
+    $pathURL = $_SESSION['page'];
+    $page = substr($pathURL, strrpos($pathURL, '/') + 1);
 
-    header("location:../VIEW/login.php?user=invalid");
-    
-    
+    if($page == 'login.php'){
+        header("location:../login.php");
+    }
+    // header("location:../index.php");
+    $_SESSION['user'] = 'none';
+    var_dump($_SESSION['user']);
+
 } else {
     $idUser = "";
-    $data = $queryResult->fetch_assoc();
-    var_dump($data);
-    $idUser = $data['nik'];
+    while($data = $queryResult->fetch_assoc()){
+        $idUer = $data['nik'];
+    }
     $_SESSION['user'] = $idUser;
-    $_SESSION['login'] = 'login';
-    $_SESSION['level'] = 'user';
-    var_dump($_SESSION['page']);
-    header('location:../VIEW/'.$_SESSION['page']);
+    var_dump($_SESSION['user']);
+    // header('location:../index.php');
 }
+
 ?>

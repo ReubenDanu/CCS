@@ -9,24 +9,9 @@
   <link rel="stylesheet" href="./ASSETS/CSS/reset.css" />
   <title>Login</title>
 </head>
-<?php
-  include('../../BASE/session.php');
-  session_start();
-  if($_SESSION['login'] == 'login'){
-    header('location:./'.$_SESSION['page']);
-  }
-?>
+
 <body>
   <div class="container">
-    <?php
-      if(isset($_GET['user'])){
-        ?>
-          <div class="warning-banner" id="warning-banner">
-            <span>Password yang anda masukan salah</span>
-          </div>
-        <?php
-      }
-    ?>
     <div class="icon"></div>
     <div class="title">
       <h1>Sign In</h1>
@@ -44,13 +29,6 @@
       </div>
     </form>
   </div>
-
-  <script defer>
-    const warning = document.getElementById("warning-banner");
-    warning.addEventListener("click", function(e){
-      warning.style.display = "none";
-      warning.style.visibility = "hidden";
-    })
-  </script>
 </body>
+
 </html>
