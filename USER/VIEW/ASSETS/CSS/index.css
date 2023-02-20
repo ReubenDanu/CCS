@@ -371,6 +371,7 @@ input:focus {
 	text-overflow: none;
 	line-height: 45.4px;
 	position: relative;
+	overflow: hidden;
 }
 
 
@@ -403,43 +404,42 @@ input:focus {
 	position: absolute;
 	top: 50%;
 	right: 2%;
-	transform: translateY(-50%) rotate(180deg);
 	border: none;
 	border-radius: 0;
 	padding: 0;
 	margin: 0;
-	background: transparent;
 	color: white;
 	display: block;
 	width: auto;
 	height: auto;
-	transition: ease-in-out 300ms;
 	background: black;
+	transform: translateY(-50%);
 }
 
 .faq .icon i {
+	transition: ease-in-out 300ms;
 	display: block;
 	position: relative;
 	margin-left: auto;
 	font-size: 2.1rem;
 	top: 0;
+	transform: translateX(-2px) rotate(180deg);
 	left: 0;
-	transform: none;
 }
 
-.faq .icon.hidden {
-	transform: translateY(-50%) rotate(0);
+.faq .icon i.hidden{
+	transform: rotate(0);
 }
+
 
 .faq .bg {
 	background: black;
-	width: 50px;
+	width: 58px;
 	height: 57.4px;
 	position: absolute;
-	top: 50%;
+	top: 0;
 	border-right: 6px;
-	right: -55.8137%;
-	transform: translateY(-50%) rotate(180deg);
+	right: 0;
 	border: none;
 	border-radius: 0;
 	padding: 0;
