@@ -17,6 +17,15 @@
 ?>
 <body>
   <div class="container">
+    <?php
+      if(isset($_GET['user'])){
+        ?>
+          <div class="warning-banner" id="warning-banner">
+            <span>Password yang anda masukan salah</span>
+          </div>
+        <?php
+      }
+    ?>
     <div class="icon"></div>
     <div class="title">
       <h1>Sign In</h1>
@@ -34,5 +43,12 @@
       </div>
     </form>
   </div>
+
+  <script defer>
+    const warning = document.getElementById("warning-banner");
+    warning.addEventListener("click", function(e){
+      console.log(e);
+    })
+  </script>
 </body>
 </html>

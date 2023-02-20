@@ -34,7 +34,10 @@
   } else {
     require_once('./COMPONENT/landing-page-nav.php.html');
   }
+
+  var_dump($_SESSION)
   ?>
+
 
   <main class="container" id="home">
     <div class="main-title">
