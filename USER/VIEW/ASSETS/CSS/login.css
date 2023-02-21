@@ -136,6 +136,10 @@
     background-color: red;
 }
 
+.warning-banner:hover{
+    cursor: pointer;
+}
+
 .warning-banner span{
     display: block;
     color: white;

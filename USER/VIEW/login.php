@@ -10,6 +10,7 @@
   <title>Login</title>
 </head>
 <?php
+  include('../../BASE/session.php');
   session_start();
   if($_SESSION['login'] == 'login'){
     header('location:./'.$_SESSION['page']);
@@ -47,7 +48,8 @@
   <script defer>
     const warning = document.getElementById("warning-banner");
     warning.addEventListener("click", function(e){
-      console.log(e);
+      warning.style.display = "none";
+      warning.style.visibility = "hidden";
     })
   </script>
 </body>

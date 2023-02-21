@@ -14,12 +14,7 @@ if($rows == 0){
     $page = $_SESSION['page'];
 
     
-    if($_SESSION['user'] != 'none'){
-        header("location:../VIEW/index.php");
-        
-    } else {
-        header("location:../VIEW/login.php?user=invalid");
-    }
+    header("location:../VIEW/login.php?user=invalid");
     
     
 } else {
