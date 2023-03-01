@@ -95,8 +95,9 @@ nav .tail{
     position: absolute;
     bottom: 0;
     left: 0;
-    background-color: blue;
+    /* background-color: blue; */
     width: 100%;
+    border-top: 1px solid black;
 }
 
 nav .tail .profile{
@@ -118,3 +119,10 @@ nav .tail .profile img{
 nav .tail .profile span{
     font-size: 1.2rem;
 }
+
+nav .tail .profile a{
+    margin-left: auto;
+    font-size: 35px;
+    color: black;    
+}
+

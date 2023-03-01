@@ -20,7 +20,7 @@
             </div>
 
             <ul class="links">
-                <li><a href="#data-show"><i class="fa-solid fa-database"></i>Data<i class="fa-solid fa-angle-right"></i></a><ul class="sub-link">
+                <li><a class="dropdown" href="#data-show"><i class="fa-solid fa-database"></i>Data<i class="fa-solid fa-angle-right"></i></a><ul class="sub-link">
                     <li class="link"><a href="community.php"><i class="fa-solid fa-users"></i>community</a></li>
                     <li class="link"><a href="report.php"><i class="fa-solid fa-flag"></i>report</a></li>
                     <li class="link"><a href="staff.php"><i class="fa-solid fa-user-gear"></i>staff</a></li>
@@ -35,9 +35,23 @@
             <div class="profile">
                 <img src="https://cdn.dribbble.com/users/12989289/avatars/normal/data?1661947896" alt="profile">
                 <span class="name">Reuben Danu</span>
-                <i class="fa-solid fa-circle-info"></i>
+                <a href="myprofile.php"><i class="fa-solid fa-circle-info"></i></a>
             </div>
         </div>
     </nav>
+
+    <script defer>
+        const dropdown = document.getElementsByClassName('dropdown');
+        const hiddenList = document.getElementsByClassName('sub-link');
+        console.log(dropdown);
+        for(let item of dropdown) {
+            item.addEventListener('click',function(e){
+                for (const item of hiddenList) {
+                    item.classList.toggle('show');
+                }
+                
+            })
+        }
+    </script>
 </body>
 </html>
