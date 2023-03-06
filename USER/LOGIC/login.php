@@ -23,6 +23,7 @@ if($rows == 0){
     $idUser = $data['nik'];
     $_SESSION['user'] = $idUser;
     $_SESSION['login'] = 'login';
+    $_SESSION['level'] = 'user';
     var_dump($_SESSION['page']);
     header('location:../VIEW/'.$_SESSION['page']);
 }

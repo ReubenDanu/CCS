@@ -1,20 +1,35 @@
 <?php
 include('connection.php');
-$nik = $_POST['nik'];
 $name = $_POST['name'];
-$email = $_POST['email'];
 $username = $_POST['username'];
 $password = $_POST['password'];
 $telp = $_POST['telp'];
-$sql = "INSERT INTO community (nik, name, email, username, password, telp) VALUES ($nik, $name, $email, $username, $password, $telp)";
+$level = 'admin';
 
+$sql = "SELECT * FROM staff WHERE username='$username'";
 $result = $mysqli->query($sql);
+$rows = $result->num_rows;
+echo $rows;
+if($rows > 1){
+    header('location:register.php?username=exists');
+}else{
+    $sql = "INSERT INTO staff (id_staff, name, username, password, telp, level) VALUES ('', '$name', '$username', '$password', '$telp','admin')";
+    $result = $mysqli->query($sql);
 
-if($result == true){
-    $_SESSION['user'] = 'user';
-    $_SESSION['nik'] = $nik;
-    header('location:sucess_login.php');
-} else if($result == false){
-    header('location:register.php?invalid=true');
+    if($result == true){
+        $sql = "SELECT id_staff FROM staff WHERE username='$username'";
+        $result = $mysqli->query($sql);
+        $id = $result->fetch_assoc();
+        if(session_status() != 2){
+            session_start();
+        }
+        $_SESSION['user'] = 'user';
+        $_SESSION['id'] = $id['id_staff'];
+        $_SESSION['level'] = 'admin';
+        var_dump($_SESSION);
+        header('location:dashboard.php');
+    } else if($result == false){
+        header('location:register.php?invalid=true');
+    }
 }
 ?>

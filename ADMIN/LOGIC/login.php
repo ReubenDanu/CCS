@@ -17,11 +17,14 @@ if($rows == 0){
 } else {
     $idUser = "";
     while($data = $queryResult->fetch_assoc()){
-        $idUser = $data['id_staff'];
-        $idUser = $data['level'];
+        $id = $data['id_staff'];
+        $level = $data['level'];
+        $user = $data['username'];
     }
-    $_SESSION['user'] = $idUser;
+    $_SESSION['user'] = $user;
     $_SESSION['level'] = $level;
+    $_SESSION['id'] = $id;
+    $_SESSION['login'] = 'login';
 
     header('location:../VIEW/dashboard.php');
 }

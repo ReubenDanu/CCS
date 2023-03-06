@@ -1,128 +1,52 @@
-/* sidebar */
-nav{
-    position: fixed;
-    left: 0;
-    top: 0;
-    z-index: 1000;
-    background-color: #fafafa;
+main{
     height: 100%;
-    width: 400px;
-    border-radius: 6px;
+    position: relative;
 }
 
-nav .head{
-    background-color: transparent;
+main .container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-nav .head .title{
+main .container h1 {
+    margin: auto;
+    width: max-content;
+    margin-top: 160px;
+    font-size: 3.2rem;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+main .container div {
     display: flex;
-    flex-direction: column;
+    margin: auto;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    margin: 10px 0;
-    gap: 10px;
+    gap: 30px;
+    margin-bottom: 260px;
 }
 
-nav .head .title button{
-    padding: 8px 130px;
+main .container div a {
+    padding: 16px 28px;
     background-color: black;
+    box-shadow: 0 0 1px gray;
+    border-radius: 8px;
+    font-size: 1.6rem;
     color: white;
-    border: none;
-    outline: none;
-    border-radius: 6px;
-    cursor: pointer;
 }
 
-nav .head .links{
-    margin: 40px 0;
-    padding: 0 20px;
-}
-
-nav .head .links li{
-    
-}
-
-
-nav .head .links li a{
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    width: 100%;
-    padding: 6px 10px;
-    text-decoration: none;
-    color: black;
-    font-size: 1.3rem;
-    border-radius: 6px;
+main .container div a:hover {
+    background-color: rgba(0, 0, 0, 0.8);
 
 }
 
-.sub-link{
-    list-style: none;
-    border-radius: 6px;
-    display: none;
-    visibility: hidden;
+main .total {
+    background-color: rgb(227, 56, 56);
+    color: white;
+    font-size: 3rem;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    text-align: center;
 }
-
-nav .head .links li a:hover{
-    background-color: gray;
-}
-
-nav .head .links li a i:first-child{
-    margin-right: 20px;
-}
-
-nav .head .links li a i:last-child{
-    margin-left: auto;
-}
-
-nav .head .links li a i{
-    max-width: 20px;
-    width: 20px;
-}
-
-nav .head .links{
-    list-style: none;
-
-}
-nav .head .sub-link .link a i:first-child{
-    margin-left: 0; 
-}
-
-
-
-nav .tail{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    /* background-color: blue; */
-    width: 100%;
-    border-top: 1px solid black;
-}
-
-nav .tail .profile{
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 10px 20px;
-}
-
-nav .tail .profile img{
-    max-width: 100%;
-    object-fit: cover;
-    object-position: center;
-    width: 50px;
-    border-radius: 100%;
-    margin-right: 20px;
-}
-
-nav .tail .profile span{
-    font-size: 1.2rem;
-}
-
-nav .tail .profile a{
-    margin-left: auto;
-    font-size: 35px;
-    color: black;    
-}
-
