@@ -31,7 +31,7 @@
         </h1>
         <div>
             <a href="./report.php">Buat Laporan Baru?</a>
-            <a href="./report.php">Check Progress Laporan Anda?</a>
+            <a href="./inbox.php">Check Progress Laporan Anda?</a>
         </div>
 
         

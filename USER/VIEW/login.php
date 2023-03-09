@@ -47,7 +47,19 @@
   <script defer>
     const warning = document.getElementById("warning-banner");
     warning.addEventListener("click", function(e){
-      console.log(e);
+      warning.style.display = "none";
+      warning.style.visibility = "hidden";
+      const url = new URL(window.location);
+
+      // Remove the "param" parameter
+      url.searchParams.delete("user");
+
+      // Replace the current URL with the new URL
+      window.history.replaceState(null, null, url);
+    })
+
+    warning.addEventListener("mouseover", function(e){
+      warning.style.cursor = "pointer";
     })
   </script>
 </body>

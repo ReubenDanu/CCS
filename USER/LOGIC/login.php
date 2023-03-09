@@ -12,17 +12,11 @@ $rows = $queryResult->num_rows;
 
 if($rows == 0){
     $page = $_SESSION['page'];
-
-    
-    if($_SESSION['user'] != 'none'){
-        header("location:../VIEW/index.php");
-        
-    } else {
-        header("location:../VIEW/login.php?user=invalid");
-    }
+    header("location:../VIEW/login.php?user=invalid");
     
     
 } else {
+    $page = $_SESSION['page'];
     $idUser = "";
     $data = $queryResult->fetch_assoc();
     var_dump($data);
@@ -30,6 +24,9 @@ if($rows == 0){
     $_SESSION['user'] = $idUser;
     $_SESSION['login'] = 'login';
     var_dump($_SESSION['page']);
-    header('location:../VIEW/'.$_SESSION['page']);
+    if($page != 'index.php'){
+        header('location:../VIEW/'.$_SESSION['page']);
+    }
+    header('location:../VIEW/dashboard.php');
 }
 ?>

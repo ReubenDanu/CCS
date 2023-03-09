@@ -3,7 +3,7 @@ include('connection.php');
 session_start();
 $username = $_POST['username'];
 $password = $_POST['password'];
-$sql = "SELECT * FROM community WHERE username = $username AND password $password";
+$sql = "SELECT * FROM community WHERE username = $username AND password = $password";
 
 $queryResult = $mysqli->query($sql);
 $rows = mysqli_num_rows($queryResult);
@@ -11,12 +11,8 @@ $rows = mysqli_num_rows($queryResult);
 if($rows == 0){
     $pathURL = $_SESSION['page'];
     $page = substr($pathURL, strrpos($pathURL, '/') + 1);
-
-    if($page == 'login.php'){
-        header("location:login.php");
-    }
-    header("location:index.php.html");
     $_SESSION['user'] = 'none';
+    header("location:login.php");
 
 } else {
     $idUser = "";

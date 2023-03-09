@@ -100,10 +100,11 @@
         }
 
         // Attach an event listener to the button
-        document.getElementById('edit').onclick = function() {
+        document.getElementById('edit').onclick = function(e) {
             // Call the function with the JSON string as an argument
+            e.preventDefault();
             processJsonData('<?php echo $json_data; ?>');
-        };
+        }
     </script>
     <?php
     include('./COMPONENT/footer.php.html');

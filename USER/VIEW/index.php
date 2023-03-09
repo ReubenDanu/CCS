@@ -39,7 +39,7 @@
   ?>
 
 
-  <main class="container" id="home">
+  <main class="container">
     <div class="main-title">
       <p>
         <strong>Layanan Aspirasi dan Pengaduan Online Rakyat</strong><br />

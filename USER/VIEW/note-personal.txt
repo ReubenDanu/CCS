@@ -1,0 +1,56 @@
+    How do you do?
+
+    Response: I'm doing well, thank you. How about yourself?
+
+    How are you today?
+
+    Response: I'm feeling good, thank you for asking.
+
+    What is your name?
+
+    Response: My name is [Your Name].
+
+    How old are you?
+
+    Response: I'm [Your Age] years old.
+
+    Where do you live?
+
+    Response: I live in [Your City/Town].
+
+    What are you?
+
+    Response: I'm currently a student.
+
+    Who is your father?
+
+    Response: My father works as a [Your Father's Occupation] or My father is currently in between jobs and is looking for new employment opportunities or My father is currently taking a break from work and focusing on other personal projects or My father is currently not employed, but he has worked in [his previous occupation or industry] in the past.
+
+    What is your mother?
+
+    Response: My mother works as a [Your Mother's Occupation].
+
+    Who is your mother?
+
+    Response: My mother's name is [Your Mother's Name].
+
+    What is your hobby?
+
+    Response: My hobby is [Your Hobby]. I enjoy [describe your hobby or activities you enjoy doing in your free time].
+
+    Do you have siblings?
+
+    Response: Yes, I do have siblings.
+
+    How many siblings do you have?
+
+    Response: I have [Number of Siblings] siblings.
+
+    What do you do to kill your free time?
+
+    Response: In my free time, I like to [describe your activities or hobbies that you enjoy doing].
+
+    What is your ideal after passing from this school?
+
+    Response: After passing from this school, my ideal plan is to [describe your future goals or plans, such as continuing education, starting a career, or pursuing a specific passion].
+
