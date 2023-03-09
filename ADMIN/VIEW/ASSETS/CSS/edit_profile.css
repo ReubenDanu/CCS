@@ -1,0 +1,87 @@
+main {
+    margin: 50px 0;
+    padding: 0;
+}
+
+.container {
+    margin: 0;
+    padding: 0;
+
+}
+
+.container .profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    gap: 40px;
+    margin-bottom: 130px;
+}
+
+.container .profile img {
+    max-width: 100%;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+}
+
+.container .profile span {
+    display: block;
+    font-size: 35px;
+    font-weight: 600;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+}
+
+.container .profile a {
+    width: auto;
+    display: inline-block;
+    padding: 15px 25px;
+    color: black;
+    border-radius: 6px;
+    text-decoration: none;
+    border: 1px solid #6e6d7a;
+}
+
+.container .data {
+    margin: auto;
+    width: max-content;
+}
+
+.container .data div label{
+    display: block;
+    margin: 10px 0;
+}
+
+.container .data div label .data {
+    border: 1px solid #6e6d7a;
+    border-radius: 4px;
+    padding: 6px 10px;
+    max-width: 100%;
+    width: 800px;
+    display: block;
+    font-size: 1.2rem;
+}
+
+.container .data div label .label {
+    display: block;
+    font-weight: 600;
+}
+
+.container .data div button{
+    padding: 12px 18px;
+    font-size: 1.2rem;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 1px 1px 1px black;
+    border: 1px solid black;
+    cursor: pointer;
+    margin-top: 6px;
+}
+
+.container .data div button:hover{
+    background: rgba(0, 0, 0, 1);
+    color: white;
+    border: 1px solid white;
+}
+

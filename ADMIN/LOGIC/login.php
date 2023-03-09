@@ -3,25 +3,30 @@ include('connection.php');
 session_start();
 $username = $_POST['username'];
 $password = $_POST['password'];
-$sql = "SELECT * FROM community WHERE username = $username AND password = $password";
+$sql = "SELECT * FROM staff WHERE username = '$username' AND password = '$password'";
+var_dump($sql);
 
 $queryResult = $mysqli->query($sql);
 $rows = mysqli_num_rows($queryResult);
 
 if($rows == 0){
-    $pathURL = $_SESSION['page'];
-    $page = substr($pathURL, strrpos($pathURL, '/') + 1);
     $_SESSION['user'] = 'none';
-    header("location:login.php");
+    header("location:../VIEW/login.php?user=invalid");
+
 
 } else {
     $idUser = "";
     while($data = $queryResult->fetch_assoc()){
-        $idUser = $data['nik'];
+        $id = $data['id_staff'];
+        $level = $data['level'];
+        $user = $data['username'];
     }
-    $_SESSION['user'] = $idUser;
+    $_SESSION['user'] = $user;
+    $_SESSION['level'] = $level;
+    $_SESSION['id'] = $id;
+    $_SESSION['login'] = 'login';
 
-    var_dump($_SESSION['user']);
+    header('location:../VIEW/dashboard.php');
 }
 
 ?>

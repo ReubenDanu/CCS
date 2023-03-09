@@ -1,0 +1,158 @@
+/* sidebar */
+nav{
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    background-color: #fafafa;
+    height: 100%;
+    width: 400px;
+    border-radius: 6px;
+}
+
+nav .head{
+    background-color: transparent;
+}
+
+nav .head .title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 10px 0;
+    gap: 10px;
+}
+
+nav .head .title a.button{
+    padding: 8px 130px;
+    background-color: black;
+    color: white;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+nav .head .links{
+    margin: 40px 0;
+    padding: 0 20px;
+}
+
+nav .head .links li a{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    padding: 6px 10px;
+    text-decoration: none;
+    color: black;
+    border-radius: 6px;
+    
+}
+
+nav .head .links li a span{
+    font-size: 1.3rem;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+}
+
+.sub-link{
+    list-style: none;
+    border-radius: 6px;
+    display: none;
+    visibility: hidden;
+}
+
+nav .head .links li a:hover{
+    background-color: gray;
+}
+
+nav .head .links li a i:first-child{
+    margin-right: 20px;
+}
+
+nav .head .links li a i:last-child{
+    margin-left: auto;
+}
+
+nav .head .links li a i{
+    max-width: 20px;
+    width: 20px;
+}
+
+nav .head .links{
+    list-style: none;
+
+}
+nav .head .sub-link .link a i:first-child{
+    margin-left: 0; 
+}
+
+
+
+nav .tail{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    /* background-color: blue; */
+    width: 100%;
+    border-top: 1px solid black;
+}
+
+nav .tail .profile{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+nav .tail .profile img{
+    max-width: 100%;
+    object-fit: cover;
+    object-position: center;
+    width: 50px;
+    border-radius: 100%;
+    margin-right: 20px;
+}
+
+nav .tail .profile span{
+    font-size: 1.2rem;
+}
+
+nav .tail .profile a{
+    margin-left: auto;
+    font-size: 35px;
+    color: black;    
+}
+
+@media screen and (max-width: 1200px) {
+    nav {
+        overflow: hidden;
+        width: 250px;
+    }
+
+    nav .head .title button {
+        padding: 8px 45px;
+    }
+
+    nav .head .links li a span{
+        font-size: 1rem;
+    }
+    
+    nav .tail .profile img{
+        width: 20%;
+        margin: 0;
+    }
+    
+    nav .tail .profile span{
+        margin: 0 10px;
+        font-size: 1rem;
+    }
+
+    nav .tail .profile a{
+        font-size: 2rem;
+    }
+}

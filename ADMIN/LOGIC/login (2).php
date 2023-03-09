@@ -17,18 +17,13 @@ if($rows == 0){
     
     
 } else {
-    $page = $_SESSION['page'];
     $idUser = "";
     $data = $queryResult->fetch_assoc();
     var_dump($data);
     $idUser = $data['nik'];
     $_SESSION['user'] = $idUser;
     $_SESSION['login'] = 'login';
-    $_SESSION['level'] = 'user';
     var_dump($_SESSION['page']);
-    if($page != 'index.php'){
-        header('location:../VIEW/'.$_SESSION['page']);
-    }
-    header('location:../VIEW/dashboard.php');
+    header('location:../VIEW/'.$_SESSION['page']);
 }
 ?>
