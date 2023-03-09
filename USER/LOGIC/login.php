@@ -12,6 +12,8 @@ $rows = $queryResult->num_rows;
 
 if($rows == 0){
     $page = $_SESSION['page'];
+
+    
     header("location:../VIEW/login.php?user=invalid");
     
     
