@@ -2,7 +2,7 @@
 if (session_status() == 0 || session_status() == 1) {
     session_start();
 }
-$page = $_SESSION['page'];
+$page = strstr($_SESSION['page'], "?", true);
 if (isset($_POST['submit'])) {
     require_once('../../BASE/connection.php');
     require_once('../../BASE/auth.php');
@@ -11,13 +11,13 @@ if (isset($_POST['submit'])) {
     $date = $_POST['date_report'];
     $report_content = $_POST['content'];
     $title = $_POST['title'];
+    $photo_temp = $_FILES['photo']['tmp_name'];
     $photo = $_FILES['photo']['name'];
-    $status = 0;
+    $status = 'pending';
     $nik = intval($_SESSION['user']);
 
-    $sql = "INSERT INTO REPORT VALUES ('', '$nik', '$date' ,'$title','$report_content','$photo','$status')";
+    $sql = "INSERT INTO `report` (`id_report`, `date`, `nik`, `title`, `report`, `photo`, `status`) VALUES (NULL, '$date', '$nik','$title','$report_content','$photo','$status')";
 
-    var_dump($nik, $sql);
     try {
         $result = $mysqli->query($sql);
     } catch (Exception $e) {
@@ -25,12 +25,16 @@ if (isset($_POST['submit'])) {
         var_dump($result);
     }
 
-    // if($result){
-    //     header('location:../VIEW/'.$page.'?success=1');
-    // } else {
-    //     header('location:../VIEW/'.$page.'?failed=1');
-    // }
-    $page = $_SESSION['page'];
+    if($result){
+        if(move_uploaded_file($photo_temp, '../../server/data/img/'.$photo)){
+            header('location:../VIEW/'.$page.'?success=1');
+        }else {
+            header('location:../VIEW/'.$page.'failed=2');
+        }
+        
+    } else {
+        header('location:../VIEW/'.$page.'?failed=1');
+    }
 
 } else {
     header('location:../VIEW/' . $page . '?success=0');

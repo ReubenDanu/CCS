@@ -9,6 +9,7 @@
 </head>
 <body>
     <?php
+        require_once('../../BASE/auth.php');
         require_once('./COMPONENT/navbar.php.html');
     ?>
     <main>

@@ -4,4 +4,12 @@ dashboard ✅
 profile ✅
 input-form ✅
 inbox ✅
-report 
+report ✅
+
+admin:
+login ✅
+register ✅
+dashboard ✅
+profile ✅
+
+

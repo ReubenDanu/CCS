@@ -2,7 +2,8 @@
 $host = "localhost";
 $user = "root";
 $password = "";
-$db = "community_complient_services";
+// $db = "community_complient_services";
+$db = "community_complient_services_sekolah";
 
 $mysqli = new mysqli($host, $user, $password, $db, 3308);
 // $mysqli = new mysqli($host, $user, $password, $db);

@@ -39,3 +39,7 @@ main .total{
     text-align: center;
     margin-top: 1px;
 }
+
+main{
+    height: calc(100%);
+}
