@@ -7,11 +7,6 @@
     <title>index</title>
 </head>
 <body>
-<<<<<<< Updated upstream
-    
-    <a href="../LOGIC/logout.php">Logout</a>
-    <a href="./login.php">Login</a>
-=======
   <?php
   include('../../BASE/auth.php');
   ?>
@@ -278,7 +273,6 @@
       // faqBoxes.addEventListener("click", e=>{
       // })
   </script>
->>>>>>> Stashed changes
 </body>
 </html>
 <?php
