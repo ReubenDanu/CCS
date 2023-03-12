@@ -38,7 +38,7 @@ if(isset($_GET['id'])){
             <span class="header">Judul</span>
             <h1 class="title data"><?php echo $data['title'] ?></h1>
             <span class="header">Laporan</span>
-            <p class="content data"><?php echo $data['report'] ?></p>
+            <span class="content data"><?php echo $data['report'] ?></span>
             <span class="header">Lampiran</span>
             <div class="embed">
                 <img src="../../server/data/img/<?php echo $data['photo'] ?>" alt="photos" class="photo data">

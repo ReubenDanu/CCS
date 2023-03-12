@@ -5,6 +5,8 @@ profile ✅
 input-form ✅
 inbox ✅
 report ✅
+getReport ✅
+pdf ❌
 
 admin:
 login ✅

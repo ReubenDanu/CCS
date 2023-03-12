@@ -14,7 +14,7 @@ main .container h1 {
     margin: auto;
     width: max-content;
     margin-top: 160px;
-    font-size: 3.2rem;
+    font-size: 2.2rem;
     text-align: center;
     margin-bottom: 30px;
 }
@@ -50,3 +50,4 @@ main .total {
     text-transform: capitalize;
     text-align: center;
 }
+

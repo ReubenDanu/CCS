@@ -63,11 +63,21 @@ nav .head .links li a span{
     list-style: none;
     border-radius: 6px;
     display: none;
+    width: auto;
+    height: 0;
     visibility: hidden;
+    transition: all ease-in-out 300ms;
+}
+
+.sub-link.show{
+    display: block;
+    visibility: visible;
+    height: auto;
 }
 
 nav .head .links li a:hover{
-    background-color: gray;
+    background-color: black;
+    color: white;
 }
 
 nav .head .links li a i:first-child{

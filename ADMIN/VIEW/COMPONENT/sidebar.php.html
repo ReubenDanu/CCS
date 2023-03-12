@@ -47,6 +47,7 @@
         for(let item of dropdown) {
             item.addEventListener('click',function(e){
                 for (const item of hiddenList) {
+                    console.log(item);
                     item.classList.toggle('show');
                 }
                 
