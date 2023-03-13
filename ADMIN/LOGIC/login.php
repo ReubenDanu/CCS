@@ -1,10 +1,9 @@
 <?php
-include('connection.php');
+require_once('../../BASE/connection.php');
 session_start();
 $username = $_POST['username'];
 $password = $_POST['password'];
 $sql = "SELECT * FROM staff WHERE username = '$username' AND password = '$password'";
-var_dump($sql);
 
 $queryResult = $mysqli->query($sql);
 $rows = mysqli_num_rows($queryResult);

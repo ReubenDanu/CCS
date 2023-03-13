@@ -1,6 +1,4 @@
-<?php
 
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -71,13 +69,13 @@
                     <div>
                         <label><span class="label">Username :</span> <input class="data" name="username" id="username" value="<?php echo $_POST["username"] ?>">
                             </input>
+                        </label>
                     </div>
-                    </label>
                     <div>
                         <label><span class="label">Password :</span> <input class="data" name="password" id="password" value="<?php echo $_POST["password"] ?>">
                             </input>
+                        </label>
                     </div>
-                    </label>
                     <div>
                         <label><span class="label">Telephone :</span> <input class="data" name="telp" id="telp" value="<?php echo $_POST["telp"] ?>">
                             </input>

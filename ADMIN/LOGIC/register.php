@@ -1,5 +1,5 @@
 <?php
-include('connection.php');
+require_once('../../BASE/connection.php');
 $name = $_POST['name'];
 $username = $_POST['username'];
 $password = $_POST['password'];
@@ -23,9 +23,10 @@ if($rows > 1){
         if(session_status() != 2){
             session_start();
         }
-        $_SESSION['user'] = 'user';
+        $_SESSION['user'] = $username;
         $_SESSION['id'] = $id['id_staff'];
         $_SESSION['level'] = 'admin';
+        $_SESSION['login'] = 'login';
         var_dump($_SESSION);
         header('location:dashboard.php');
     } else if($result == false){

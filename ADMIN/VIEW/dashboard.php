@@ -18,7 +18,7 @@
 </head>
 <body>
     <?php
-        require_once('./COMPONENT/sidebar.php.html');
+        require_once('./COMPONENT/sidebar.php');
     ?>
     <main>
         <?php

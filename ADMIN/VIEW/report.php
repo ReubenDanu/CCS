@@ -4,7 +4,7 @@ require_once('../../BASE/connection.php');
 
 session_start();
 $show = false;
-$sql = "SELECT * FROM `community`";
+$sql = "SELECT * FROM `report`";
 if ($data = $mysqli->query($sql)) {
     $package = array();
     $show = true;
@@ -35,11 +35,11 @@ if ($data = $mysqli->query($sql)) {
 
 <body>
     <?php
-    require_once('./COMPONENT/sidebar.php');
+    require_once('./COMPONENT/sidebar.php.html');
 
 ?>
     <main class="container">
-        <h1>Data Masyarakat</h1>
+        <h1>Data Laporan</h1>
         <?php
         if ($show && count($package) != 0) {
             $i = 0;
@@ -47,12 +47,13 @@ if ($data = $mysqli->query($sql)) {
             <table class="styled-table">
                 <thead>
                     <tr>
-                        <th>NIK</th>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Username</th>
-                        <th>Password</th>
-                        <th>Telp</th>
+                        <th>ID</th>
+                        <th>Date</th>
+                        <th>Nik</th>
+                        <th>Title</th>
+                        <th>Report</th>
+                        <th>Photo</th>
+                        <th>Status</th>
                         <th colspan="2">Operasi</th>
                     </tr>
                 </thead>
@@ -62,14 +63,15 @@ if ($data = $mysqli->query($sql)) {
                             ?>
                             <tr>
                             
+                                <td><?php echo $package[$key]['id_report'] ?></td>
+                                <td><?php echo $package[$key]['date'] ?></td>
                                 <td><?php echo $package[$key]['nik'] ?></td>
-                                <td><?php echo $package[$key]['name'] ?></td>
-                                <td><?php echo $package[$key]['email'] ?></td>
-                                <td><?php echo $package[$key]['username'] ?></td>
-                                <td><?php echo $package[$key]['password'] ?></td>
-                                <td><?php echo $package[$key]['telp'] ?></td>
-                                <td><a class="operation-link" href="edit_community.php?id=<?php echo $package[$key]['nik'] ?>">edit</a></td>
-                                <td><a class="operation-link" href="remove_community.php?id=<?php echo $package[$key]['nik'] ?>">remove</a></td>
+                                <td><?php echo $package[$key]['title'] ?></td>
+                                <td><?php echo $package[$key]['report'] ?></td>
+                                <td><?php echo $package[$key]['photo'] ?></td>
+                                <td><?php echo $package[$key]['status'] ?></td>
+                                <td><a class="operation-link" href="edit_community.php?id=<?php echo $package[$key]['id_report']?>">edit</a></td>
+                                <td><a class="operation-link" href="remove_community.php?id=<?php echo $package[$key]['id_report']?>">remove</a></td>
                             </tr>
                             
                             
@@ -78,14 +80,15 @@ if ($data = $mysqli->query($sql)) {
                         } else { ?>
                         <tr class="active-row">
                        
-                            <td><?php echo $package[$key]['nik'] ?></td>
-                                <td><?php echo $package[$key]['name'] ?></td>
-                                <td><?php echo $package[$key]['email'] ?></td>
-                                <td><?php echo $package[$key]['username'] ?></td>
-                                <td><?php echo $package[$key]['password'] ?></td>
-                                <td><?php echo $package[$key]['telp'] ?></td>
-                                <td><a class="operation-link"href="edit_community.php?id=<?php echo $package[$key]['nik'] ?>">Edit</a></td>
-                                <td><a class="operation-link"href="remove_community.php?id=<?php echo $package[$key]['nik'] ?>">Remove</a></td>
+                           <td><?php echo $package[$key]['id_report'] ?></td>
+                                <td><?php echo $package[$key]['date'] ?></td>
+                                <td><?php echo $package[$key]['nik'] ?></td>
+                                <td><?php echo $package[$key]['title'] ?></td>
+                                <td><?php echo $package[$key]['report'] ?></td>
+                                <td><?php echo $package[$key]['photo'] ?></td>
+                                <td><?php echo $package[$key]['status'] ?></td>
+                                <td><a class="operation-link"href="edit_community.php?id=<?php echo $package[$key]['id_report']?>">Edit</a></td>
+                                <td><a class="operation-link"href="remove_community.php?id=<?php echo $package[$key]['id_report']?>">Remove</a></td>
                             </tr>
 
 
@@ -103,11 +106,10 @@ if ($data = $mysqli->query($sql)) {
         }
         ?>
     </main>
-    <?php
+      <?php
     require_once('./COMPONENT/footer.php.html');
 
     ?>
-
 </body>
 
 </html>

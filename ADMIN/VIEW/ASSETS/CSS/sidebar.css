@@ -102,6 +102,13 @@ nav .head .sub-link .link a i:first-child{
 }
 
 
+nav .tail .profile a:nth-child(1) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0;
+}
+
 
 nav .tail{
     position: absolute;

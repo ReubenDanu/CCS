@@ -26,34 +26,35 @@
 
 <body>
 
-</body>
-
+    
     <script defer>
         let ikan = "ikan";
-            function processJsonData(params) {
-                let data = JSON.parse(params)
-                let form = document.createElement("form");
-                form.setAttribute("method", "post");
-                form.setAttribute("action", "../VIEW/edit_profile.php?success=false");
-                if('<?php echo $flag?>' == 1){
-                    form.setAttribute("action", "../VIEW/edit_profile.php?success=true");
-                }
-                
-                Object.keys(data).forEach(key => {
-                    let input = document.createElement("input");
-                    input.setAttribute("type", "hidden");
-                    input.setAttribute("readonly", "");
-                    input.setAttribute("name", key);
-                    input.setAttribute("value", data[key]);
-                    form.append(input);
-                });
-                console.log(form);
-                form.style.display = "none";
-                form.style.visibility = "hidden";
-                document.body.append(form);
-                
-                form.submit();            
-            }        
+        function processJsonData(params) {
+            let data = JSON.parse(params)
+            let form = document.createElement("form");
+            form.setAttribute("method", "post");
+            form.setAttribute("action", "../VIEW/edit_profile.php?success=false");
+            if('<?php echo $flag?>' == 1){
+                form.setAttribute("action", "../VIEW/edit_profile.php?success=true");
+            }
+            
+            Object.keys(data).forEach(key => {
+                let input = document.createElement("input");
+                input.setAttribute("type", "hidden");
+                input.setAttribute("readonly", "");
+                input.setAttribute("name", key);
+                input.setAttribute("value", data[key]);
+                form.append(input);
+            });
+            console.log(form);
+            form.style.display = "none";
+            form.style.visibility = "hidden";
+            document.body.append(form);
+            
+            form.submit();            
+        }        
             processJsonData('<?php echo $json_data?>');
             
-    </script>
+            </script>
+
+</body>

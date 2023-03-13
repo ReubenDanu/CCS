@@ -1,5 +1,5 @@
 <?php
 session_start();
 session_unset();
-header('location:../VIEW/index.php');
+header('location:../VIEW/login.php');
 ?>

@@ -18,16 +18,6 @@
   <?php
   include('../../BASE/auth.php');
   ?>
-  <!-- create navbar horizontal -->
-  <!-- make a user interaction can be a rendering a html or just changing some style to more alive -->
-  <!-- such as hover, click, scroll, -->
-  <!-- use icon for better imagery -->
-  <!-- blackness easy on eyes -->
-  <!-- font style -->
-  <!-- sizing -->
-  <!-- positioning -->
-
-  <!-- i don't use colourfull element, i don't use any animation yet, position doesn't generous complicated mine is basic row and col not dynamic -->
   <?php
   if ($_SESSION['login'] == 'login') {
     require_once('./COMPONENT/navbar.php.html');
