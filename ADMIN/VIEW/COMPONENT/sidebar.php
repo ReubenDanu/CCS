@@ -32,7 +32,7 @@ if(session_status() != 2){
                     <li class="link"><a href="response.php"><i class="fa-solid fa-reply"></i>response</a></li>
                     <li class="link"><a href="staff.php"><i class="fa-solid fa-user-gear"></i>staff</a></li>
                 </ul></li>
-                <li><a href="getReports"><i class="fa-solid fa-file"></i><span>Lihat Laporan</span><i class="fa-solid fa-angle-right"></i></a></li>
+                <li><a href="getReports.php"><i class="fa-solid fa-file"></i><span>Lihat Laporan</span><i class="fa-solid fa-angle-right"></i></a></li>
                 <li><a href="verify.php"><i class="fa-solid fa-check"></i><span>Verifikasi & Validasi</span><i class="fa-solid fa-angle-right"></i></a></li>
                 <li><a href="respond.php"><i class="fa-solid fa-reply"></i><span>Tanggapi Laporan</span><i class="fa-solid fa-angle-right"></i></a></li>
             </ul>

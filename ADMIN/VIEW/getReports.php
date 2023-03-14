@@ -54,7 +54,6 @@ if ($data = $mysqli->query($sql)) {
                         <th>Report</th>
                         <th>Photo</th>
                         <th>Status</th>
-                        <th colspan="2">Operasi</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -70,8 +69,6 @@ if ($data = $mysqli->query($sql)) {
                                 <td><?php echo $package[$key]['report'] ?></td>
                                 <td><?php echo $package[$key]['photo'] ?></td>
                                 <td><?php echo $package[$key]['status'] ?></td>
-                                <td><a class="operation-link" href="edit_community.php?id=<?php echo $package[$key]['id_report']?>">edit</a></td>
-                                <td><a class="operation-link" href="remove_community.php?id=<?php echo $package[$key]['id_report']?>">remove</a></td>
                             </tr>
                             <?php
                         } else { ?>
@@ -84,8 +81,6 @@ if ($data = $mysqli->query($sql)) {
                                 <td><?php echo $package[$key]['report'] ?></td>
                                 <td><?php echo $package[$key]['photo'] ?></td>
                                 <td><?php echo $package[$key]['status'] ?></td>
-                                <td><a class="operation-link"href="edit_community.php?id=<?php echo $package[$key]['id_report']?>">Edit</a></td>
-                                <td><a class="operation-link"href="remove_community.php?id=<?php echo $package[$key]['id_report']?>">Remove</a></td>
                             </tr>
 
 

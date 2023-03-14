@@ -35,7 +35,7 @@ if ($data = $mysqli->query($sql)) {
 
 <body>
     <?php
-    require_once('./COMPONENT/sidebar.php.html');
+    require_once('./COMPONENT/sidebar.php');
 
 ?>
     <main class="container">
@@ -103,6 +103,11 @@ if ($data = $mysqli->query($sql)) {
         }
         ?>
     </main>
+    <?php
+    require_once('./COMPONENT/footer.php.html');
+
+    ?>
+
 </body>
 
 </html>

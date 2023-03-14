@@ -35,7 +35,7 @@ if ($data = $mysqli->query($sql)) {
 
 <body>
     <?php
-    require_once('./COMPONENT/sidebar.php.html');
+    require_once('./COMPONENT/sidebar.php');
 
 ?>
     <main class="container">
@@ -47,8 +47,8 @@ if ($data = $mysqli->query($sql)) {
             <table class="styled-table">
                 <thead>
                     <tr>
-                        <th>ID Tanggapan</th>
-                        <th>ID Laporan</th>
+                        <th>ID Response</th>
+                        <th>ID Report</th>
                         <th>Date</th>
                         <th>Response</th>
                         <th>ID Staff</th>
@@ -61,13 +61,13 @@ if ($data = $mysqli->query($sql)) {
                             ?>
                             <tr>
                             
-                                <td><?php echo $package[$key]['id_tanggapan'] ?></td>
+                                <td><?php echo $package[$key]['id_response'] ?></td>
                                 <td><?php echo $package[$key]['id_report'] ?></td>
                                 <td><?php echo $package[$key]['date'] ?></td>
                                 <td><?php echo $package[$key]['response'] ?></td>
                                 <td><?php echo $package[$key]['id_staff'] ?></td>
-                                <td><a class="operation-link" href="edit_community.php?id=<?php echo $package[$key]['id_tanggapan'] ?>">edit</a></td>
-                                <td><a class="operation-link" href="remove_community.php?id=<?php echo $package[$key]['id_tanggapan'] ?>">remove</a></td>
+                                <td><a class="operation-link" href="edit_community.php?id=<?php echo $package[$key]['id_response'] ?>">edit</a></td>
+                                <td><a class="operation-link" href="remove_community.php?id=<?php echo $package[$key]['id_response'] ?>">remove</a></td>
                             </tr>
                             
                             
@@ -76,13 +76,13 @@ if ($data = $mysqli->query($sql)) {
                         } else { ?>
                         <tr class="active-row">
                        
-                            <td><?php echo $package[$key]['id_tanggapan'] ?></td>
+                            <td><?php echo $package[$key]['id_response'] ?></td>
                                 <td><?php echo $package[$key]['id_report'] ?></td>
                                 <td><?php echo $package[$key]['date'] ?></td>
                                 <td><?php echo $package[$key]['response'] ?></td>
                                 <td><?php echo $package[$key]['id_staff'] ?></td>
-                                <td><a class="operation-link"href="edit_community.php?id=<?php echo $package[$key]['id_tanggapan'] ?>">Edit</a></td>
-                                <td><a class="operation-link"href="remove_community.php?id=<?php echo $package[$key]['id_tanggapan'] ?>">Remove</a></td>
+                                <td><a class="operation-link"href="edit_community.php?id=<?php echo $package[$key]['id_response'] ?>">Edit</a></td>
+                                <td><a class="operation-link"href="remove_community.php?id=<?php echo $package[$key]['id_response'] ?>">Remove</a></td>
                             </tr>
 
 
