@@ -4,6 +4,8 @@
     font-size: 0.9em;
     font-family: sans-serif;
     min-width: 400px;
+    max-width: 100%;
+    width: 80%;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
@@ -16,6 +18,7 @@
 .styled-table th,
 .styled-table td {
     padding: 12px 15px;
+    text-align: center;
 }
 
 .styled-table tbody tr {
@@ -33,4 +36,12 @@
 .styled-table tbody tr.active-row {
     font-weight: bold;
     color: #009879;
+}
+
+.styled-table tbody tr td .photo{
+    max-width: 50%;
+        display: block;
+        height: auto;
+        width: 80px;
+        margin:auto;
 }

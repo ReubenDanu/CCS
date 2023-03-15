@@ -40,7 +40,7 @@
         <input type="text" class="date-picker-x-input" name="date_report" placeholder="Masukkan tanggal kejadian*" />
       </div>
       <div class="complaint-input-category">
-        <input placeholder=i"Lampirkan media*" name="photo" type="file" accept=".pdf,.jpeg,.png,.zip" multiple
+        <input placeholder="Lampirkan media*" name="photo" type="file" accept=".pdf,.jpeg,.png,.zip" multiple
           class="input-form" />
       </div>
       <div class="form-button">

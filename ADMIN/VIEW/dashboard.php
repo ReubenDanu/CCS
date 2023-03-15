@@ -19,6 +19,7 @@
 <body>
     <?php
         require_once('./COMPONENT/sidebar.php');
+        require_once('../../BASE/authAdmin.php');
     ?>
     <main>
         <?php

@@ -15,10 +15,6 @@ main > .title{
 	color: black;
 }
 
-main{
-	height: calc(100% - 160px);
-}
-
 .styled-table {
 	border-collapse: collapse;
 	margin: 25px 0;
@@ -68,4 +64,11 @@ td {
 		overflow: hidden;
 		text-overflow: ellipsis;
 		display: block;
+}
+
+.styled-table .photo {
+	max-width: 100%;
+	width: 80px;
+	height: auto;
+	display: block;
 }

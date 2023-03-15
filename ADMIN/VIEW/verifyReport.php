@@ -50,11 +50,11 @@ if(session_status() != 2){
         ?>
     <main>
        
-        <form action="../LOGIC/report.php" method="post" enctype="multipart/form-data">
+        <form action="../LOGIC/verify.php" method="post" enctype="multipart/form-data">
             <h1 class="title">Verifikasi Laporan</h1>
             <div class="complaint-input-category">
                 <span style="display:block;" class="title-info">ID</span>
-                <input readonly value="<?php echo $data['id_report'] ?>" placeholder="Masukkan judul laporan anda*" name="id" required="true" type="text"
+                <input readonly value="<?php echo $data['id_report'] ?>" placeholder="Masukkan judul laporan anda*" name="id_report" required="true" type="text"
                 class="input-form" />
             </div>
             <div class="complaint-input-category date-group" style="display: block;">
@@ -69,8 +69,8 @@ if(session_status() != 2){
             </div>
             <div class="complaint-input-category">
                 <span style="display:block;" class="title-info">Report</span>
-                <input readonly value="<?php echo $data['report'] ?>" placeholder="Masukkan isi laporan anda*" name="title" required="true" type="text"
-                    class="input-form"></input>
+                <textarea readonly placeholder="Masukkan isi laporan anda*" name="title" required="true" type="text"
+                    class="input-form"><?php echo $data['report'] ?></textarea>
             </div>
             <div class="complaint-input-category">
                 <span style="display:block;" class="title-info">Photo</span>

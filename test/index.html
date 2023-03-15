@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .styled-table {
+      border-collapse: collapse;
+      margin: 25px 0;
+      font-size: 0.9em;
+      font-family: sans-serif;
+      min-width: 400px;
+      max-width: 100%;
+      width: 80%;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .styled-table thead tr {
+      background-color: #009879;
+      color: #ffffff;
+      text-align: left;
+    }
+
+    .styled-table th,
+    .styled-table td {
+      padding: 12px 15px;
+    }
+
+    .styled-table tbody tr {
+      border-bottom: 1px solid #dddddd;
+    }
+
+    .styled-table tbody tr:nth-of-type(even) {
+      background-color: #f3f3f3;
+    }
+
+    .styled-table tbody tr:last-of-type {
+      border-bottom: 2px solid #009879;
+    }
+
+    .styled-table tbody tr.active-row {
+      font-weight: bold;
+      color: #009879;
+    }
+
+    .styled-table tbody tr td .photo {
+      max-width: 100%;
+      width: 200px;
+    }
+  </style>
+  <body>
+    <table class="styled-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Date</th>
+          <th>Nik</th>
+          <th>Title</th>
+          <th>Report</th>
+          <th>Photo</th>
+          <th>Status</th>
+          <th colspan="2">Operasi</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Dummy Data</td>
+          <td>Dummy Data</td>
+          <td>Dummy Data</td>
+          <td>Dummy Data</td>
+          <td>Dummy Data</td>
+          <td>
+            <img
+              class="photo"
+              src="../server/data/img/Screenshot 2022-01-18 145754.png"
+              alt="photo"
+            />
+          </td>
+          <td>Dummy Data</td>
+          <td>
+            <a class="operation-link" href="edit_community.php?id=23">edit</a>
+          </td>
+          <td>
+            <a class="operation-link" href="remove_community.php?id=23"
+              >remove</a
+            >
+          </td>
+        </tr>
+        <tr class="active-row">
+          <td>Dummy Data</td>
+          <td>Dummy Data</td>
+          <td>Dummy Data</td>
+          <td>Dummy Data</td>
+          <td>Dummy Data</td>
+          <td>
+            <img
+              class="photo"
+              src="../server/data/img/Screenshot 2022-01-18 145754.png"
+              alt="photo"
+            />
+          </td>
+          <td>Dummy Data</td>
+          <td>
+            <a class="operation-link" href="edit_community.php?id=23">Edit</a>
+          </td>
+          <td>
+            <a class="operation-link" href="remove_community.php?id=23"
+              >Remove</a
+            >
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

@@ -69,7 +69,7 @@ if ($data = $mysqli->query($sql)) {
                                 <td><?php echo $package[$key]['nik'] ?></td>
                                 <td><?php echo $package[$key]['title'] ?></td>
                                 <td><?php echo $package[$key]['report'] ?></td>
-                                <td><?php echo $package[$key]['photo'] ?></td>
+                                <td><img src="../../server/data/img/<?php echo $package[$key]['photo'] ?>" alt="photo"></td>
                                 <td><?php echo $package[$key]['status'] ?></td>                        
            
                                 <td><a  onclick="return confirm('verifikasi laporan ini?');" class="operation-link" href="./verifyReport.php?id=<?php echo $package[$key]['id_report'] ?>" >Verify & Validate</a></td>
@@ -87,7 +87,7 @@ if ($data = $mysqli->query($sql)) {
                                 <td><?php echo $package[$key]['nik'] ?></td>
                                 <td><?php echo $package[$key]['title'] ?></td>
                                 <td><?php echo $package[$key]['report'] ?></td>
-                                <td><?php echo $package[$key]['photo'] ?></td>
+                                <td><img src="../../server/data/img/<?php echo $package[$key]['photo'] ?>" alt="photo"></td>
                                 <td><?php echo $package[$key]['status'] ?></td>
                                
                                 <td><a  onclick="return confirm('verifikasi laporan ini?');" class="operation-link"href="./verifyReport.php?id=<?php echo $package[$key]['id_report'] ?>">Verify & Validate</a></td>

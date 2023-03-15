@@ -54,6 +54,7 @@ if ($data = $mysqli->query($sql)) {
                         <th>Report</th>
                         <th>Photo</th>
                         <th>Status</th>
+                        <th>Operation</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -66,9 +67,10 @@ if ($data = $mysqli->query($sql)) {
                                 <td><?php echo $package[$key]['date'] ?></td>
                                 <td><?php echo $package[$key]['nik'] ?></td>
                                 <td><?php echo $package[$key]['title'] ?></td>
-                                <td><?php echo $package[$key]['report'] ?></td>
-                                <td><?php echo $package[$key]['photo'] ?></td>
+                                <td><span class="report"><?php echo $package[$key]['report'] ?></span></td>
+                               <td><img class="photo" src="../../server/data/img/<?php echo $package[$key]['photo'] ?>" alt="photo" ></td>
                                 <td><?php echo $package[$key]['status'] ?></td>
+                                 <td><a href="./viewReport.php?id=<?php echo $package[$key]['id_report'] ?>" class="more operation-link"><i class="fa-solid fa-eye"></i></a></td>
                             </tr>
                             <?php
                         } else { ?>
@@ -78,9 +80,10 @@ if ($data = $mysqli->query($sql)) {
                                 <td><?php echo $package[$key]['date'] ?></td>
                                 <td><?php echo $package[$key]['nik'] ?></td>
                                 <td><?php echo $package[$key]['title'] ?></td>
-                                <td><?php echo $package[$key]['report'] ?></td>
-                                <td><?php echo $package[$key]['photo'] ?></td>
+                                <td><span class="report"><?php echo $package[$key]['report'] ?></span></td>
+                               <td><img class="photo" src="../../server/data/img/<?php echo $package[$key]['photo'] ?>" alt="photo" ></td>
                                 <td><?php echo $package[$key]['status'] ?></td>
+                                 <td><a href="./viewReport.php?id=<?php echo $package[$key]['id_report'] ?>" class="more operation-link"><i class="fa-solid fa-eye"></i></a></td>
                             </tr>
 
 

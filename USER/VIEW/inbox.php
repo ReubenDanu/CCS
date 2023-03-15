@@ -35,12 +35,14 @@
 			<table class="styled-table">
 				<thead>
 					<tr>
-						<th>no</th>
-						<th>title</th>
-						<th>description</th>
-						<th>status</th>
-						<th>action</th>
-						<th>date</th>
+						<th>No</th>
+						<th>ID</th>
+						<th>Title</th>
+						<th>Description</th>
+						<th>Photo</th>
+						<th>Status</th>
+						<th>Action</th>
+						<th>Date</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -60,11 +62,15 @@
 								<?php echo $index ?>
 							</td>
 							<td>
+								<?php echo $data['id_report'] ?>
+							</td>
+							<td>
 								<?php echo $data['title'] ?>
 							</td>
 							<td>
 								<span class="report"><?php echo $data['report'] ?></span>
 							</td>
+							 <td><img class="photo" src="../../server/data/img/<?php echo $data['photo'] ?>" alt="photo" ></td>
 							<td>
 								<?php echo $data['status'] ?>
 							</td>

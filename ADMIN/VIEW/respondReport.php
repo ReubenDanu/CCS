@@ -70,36 +70,31 @@ WHERE r1.id_report = '$id';
                             <input readonly value="<?php echo $data['status'] ?>" placeholder="Masukkan judul laporan anda*"
                                 name="status" required="true" type="text" class="input-form" />
                         </div>
-                        <?php
-                        if ($data['status'] == 'process') {
-                            ?>
-                            <div class="complaint-input-category">
-                                <span style="display:block;" class="title-info">Response</span>
-                                <input readonly value="Laporan Belum Ditanggapi" placeholder="Masukkan judul laporan anda*"
-                                    name="response" required="true" type="text" class="input-form" />
-                            </div>
 
-                            <?php
-                        } elseif ($data['status'] == 'completed') {
-                            ?>
                             <div class="complaint-input-category">
                                 <span style="display:block;" class="title-info">Response</span>
-                                <input readonly value="<?php echo $data['response'] ?>" placeholder="Masukkan judul laporan anda*"
+                                <input placeholder="Masukkan Tanggapan anda*"
                                     name="response" required="true" type="text" class="input-form" />
                             </div>
                             <div class="complaint-input-category">
                                 <span style="display:block;" class="title-info">Date Response</span>
-                                 <input type="text" class="date-picker-x-input" name="date" readonly value="<?php echo $data['response_date'] ?>"
+                                 <input type="text" class="date-picker-x-input" name="date" readonly value="<?php echo date('Y-m-d') ?>"
                                 placeholder="Masukkan tanggal kejadian*" />
                             </div>
 
-
-                            <?php
-                        }
+                        
 
 
-                        ?>
+                    
 
+                            <div class="form-button">
+                                
+                <button type="submit" name="submit" value="submit">Tanggapi
+                    </button>
+                    
+            
+    
+                            </div>
                         <div class="form-button back">
                             <a href="./getReports.php" name="back" class="button" value="submit">Back
                             </a>
@@ -123,6 +118,6 @@ WHERE r1.id_report = '$id';
     </html>
     <?php
 } else {
-    header('location:./report.php');
+    header('location:./respond.php');
 }
 ?>

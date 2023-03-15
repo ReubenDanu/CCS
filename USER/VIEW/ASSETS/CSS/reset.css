@@ -30,11 +30,20 @@ svg {
     max-width: 100%;
 }
 
+img{
+    block-size: auto;
+    object-fit: cover;
+}
+
 input,
 button,
 textarea,
 select {
     font: inherit;
+}
+
+textarea{
+    max-width: 100%;
 }
 
 p,

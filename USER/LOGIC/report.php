@@ -2,7 +2,7 @@
 if (session_status() == 0 || session_status() == 1) {
     session_start();
 }
-$page = strstr($_SESSION['page'], "?", true);
+// $page = strstr($_SESSION['page'], "?", true);
 if (isset($_POST['submit'])) {
     require_once('../../BASE/connection.php');
     require_once('../../BASE/auth.php');
@@ -27,17 +27,17 @@ if (isset($_POST['submit'])) {
 
     if($result){
         if(move_uploaded_file($photo_temp, '../../server/data/img/'.$photo)){
-            header('location:../VIEW/'.$page.'?success=1');
+            header('location:../VIEW/'.'report.php'.'?success=1');
         }else {
-            header('location:../VIEW/'.$page.'failed=2');
+            header('location:../VIEW/'.'report.php'.'failed=2');
         }
         
     } else {
-        header('location:../VIEW/'.$page.'?failed=1');
+        header('location:../VIEW/'.'report.php'.'?failed=1');
     }
 
 } else {
-    header('location:../VIEW/' . $page . '?success=0');
+    header('location:../VIEW/' . 'report.php' . '?invalid=true');
 }
 
 ?>

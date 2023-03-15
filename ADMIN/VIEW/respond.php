@@ -45,7 +45,7 @@ if ($data = $mysqli->query($sql)) {
         if ($show && count($package) != 0) {
             $i = 0;
             ?>
-            <table class="styled-table">
+             <table class="styled-table">
                 <thead>
                     <tr>
                         <th>ID</th>
@@ -55,7 +55,7 @@ if ($data = $mysqli->query($sql)) {
                         <th>Report</th>
                         <th>Photo</th>
                         <th>Status</th>
-                        <th>Operasi</th>
+                        <th colspan="2">Operation</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -63,20 +63,17 @@ if ($data = $mysqli->query($sql)) {
                         if ($i % 2 != 0) {
                             ?>
                             <tr>
+                            
                                 <td><?php echo $package[$key]['id_report'] ?></td>
                                 <td><?php echo $package[$key]['date'] ?></td>
                                 <td><?php echo $package[$key]['nik'] ?></td>
                                 <td><?php echo $package[$key]['title'] ?></td>
-                                <td><?php echo $package[$key]['report'] ?></td>
-                                <td><?php echo $package[$key]['photo'] ?></td>
-                                <td><?php echo $package[$key]['status'] ?></td>                              
-                                <td><a class="operation-link"href="./verifyReport.php?id=<?php echo $package[$key]['id_report'] ?>">Verify & Validate</a></td>
-
-                            </tr>
-                            
-                            
-                            <?php
-
+                                <td><span class="report"><?php echo $package[$key]['report'] ?></span></td>
+                                <td><img class="photo" src="../../server/data/img/<?php echo $package[$key]['photo'] ?>" alt="photo" ></td>
+                                <td><?php echo $package[$key]['status'] ?></td>
+                                  <td><a class="operation-link" href="respondReport.php?id=<?php echo $package[$key]['id_report'] ?>">Response</a></td>
+                                        </tr>
+                                       <?php
                         } else { ?>
                         <tr class="active-row">
                        
@@ -84,14 +81,14 @@ if ($data = $mysqli->query($sql)) {
                                 <td><?php echo $package[$key]['date'] ?></td>
                                 <td><?php echo $package[$key]['nik'] ?></td>
                                 <td><?php echo $package[$key]['title'] ?></td>
-                                <td><?php echo $package[$key]['report'] ?></td>
-                                <td><?php echo $package[$key]['photo'] ?></td>
+                                <td><span class="report"><?php echo $package[$key]['report'] ?></span></td>
+                                <td><img class="photo" src="../../server/data/img/<?php echo $package[$key]['photo'] ?>" alt="photo" ></td>
                                 <td><?php echo $package[$key]['status'] ?></td>
-                                <td><a class="operation-link"href="./verifyReport.php?id=<?php echo $package[$key]['id_report'] ?>">Tanggapi</a></td>
-                            </tr>
+                                 <td><a class="operation-link" href="respondReport.php?id=<?php echo $package[$key]['id_report'] ?>">Response</a></td>
+                                        </tr>
 
 
-                        <?php
+                                   <?php
                         }
                     } ?>
                     <!-- and so on... -->

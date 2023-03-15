@@ -54,7 +54,7 @@ if ($data = $mysqli->query($sql)) {
                         <th>Report</th>
                         <th>Photo</th>
                         <th>Status</th>
-                        <th colspan="2">Operasi</th>
+                        <th colspan="2">Operation</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -67,13 +67,13 @@ if ($data = $mysqli->query($sql)) {
                                 <td><?php echo $package[$key]['date'] ?></td>
                                 <td><?php echo $package[$key]['nik'] ?></td>
                                 <td><?php echo $package[$key]['title'] ?></td>
-                                <td><?php echo $package[$key]['report'] ?></td>
-                                <td><?php echo $package[$key]['photo'] ?></td>
+                                <td><span class="report"><?php echo $package[$key]['report'] ?></span></td>
+                                <td><img class="photo" src="../../server/data/img/<?php echo $package[$key]['photo'] ?>" alt="photo" ></td>
                                 <td><?php echo $package[$key]['status'] ?></td>
-                                <td><a class="operation-link" href="edit_community.php?id=<?php echo $package[$key]['id_report']?>">edit</a></td>
-                                <td><a class="operation-link" href="remove_community.php?id=<?php echo $package[$key]['id_report']?>">remove</a></td>
-                            </tr>
-                            <?php
+                                  <td><a class="operation-link" href="edit_report.php?id=<?php echo $package[$key]['nik'] ?>">edit</a></td>
+                                <td><a class="operation-link" href="remove_report.php?id=<?php echo $package[$key]['nik'] ?>">remove</a></td>
+                                        </tr>
+                                       <?php
                         } else { ?>
                         <tr class="active-row">
                        
@@ -81,15 +81,15 @@ if ($data = $mysqli->query($sql)) {
                                 <td><?php echo $package[$key]['date'] ?></td>
                                 <td><?php echo $package[$key]['nik'] ?></td>
                                 <td><?php echo $package[$key]['title'] ?></td>
-                                <td><?php echo $package[$key]['report'] ?></td>
-                                <td><?php echo $package[$key]['photo'] ?></td>
+                                <td><span class="report"><?php echo $package[$key]['report'] ?></span></td>
+                                <td><img class="photo" src="../../server/data/img/<?php echo $package[$key]['photo'] ?>" alt="photo" ></td>
                                 <td><?php echo $package[$key]['status'] ?></td>
-                                <td><a class="operation-link"href="edit_community.php?id=<?php echo $package[$key]['id_report']?>">Edit</a></td>
-                                <td><a class="operation-link"href="remove_community.php?id=<?php echo $package[$key]['id_report']?>">Remove</a></td>
-                            </tr>
+                                 <td><a class="operation-link" href="edit_report.php?id=<?php echo $package[$key]['nik'] ?>">edit</a></td>
+                                <td><a class="operation-link" href="remove_report.php?id=<?php echo $package[$key]['nik'] ?>">remove</a></td>
+                                        </tr>
 
 
-                        <?php
+                                   <?php
                         }
                     } ?>
                     <!-- and so on... -->
