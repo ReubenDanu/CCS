@@ -22,54 +22,54 @@ if(isset($_GET['id'])){
     <?php
                 require_once('../../BASE/auth.php');
                 require_once('../../BASE/connection.php');
-                $sql = "SELECT * FROM report WHERE report.id_report =".$_GET['id'];
+                $id = $_GET['id'];
+                $sql = "SELECT * FROM report WHERE report.id_report = '$id'";
                 try{
                     $result = $mysqli->query($sql);
                     $tanggapan = false;
                     while($data = $result->fetch_assoc()){
                         
                         ?>
-            <div class  ="container">
-                <span class="header">Id Laporan</span>
-                <span class="id data"><?php echo $data['id_report'] ?></span>    
-                <span class="header">Tanggal</span>
-                <span class="date data"><?php echo $data['date'] ?></span>
-            
-            <span class="header">Judul</span>
-            <h1 class="title data"><?php echo $data['title'] ?></h1>
-            <span class="header">Laporan</span>
-            <span class="content data"><?php echo $data['report'] ?></span>
-            <span class="header">Lampiran</span>
-            <div class="embed">
-                <img src="../../server/data/img/<?php echo $data['photo'] ?>" alt="photos" class="photo data">
+            <form action="../LOGIC/report.php" method="post" enctype="multipart/form-data">
+            <h1 class="title">Informasi Laporan</h1>
+            <div class="complaint-input-category">
+                <span style="display:block;" class="title-info">ID</span>
+                <input readonly value="<?php echo $data['id_report'] ?>" placeholder="Masukkan judul laporan anda*" name="id" required="true" type="text"
+                class="input-form" />
             </div>
-            <span class="header">Status</span>
-            <span class="status data"><?php echo $data['status'] ?></span>
-            
-            <?php
-            if($tanggapan){
-                ?>
-                <span class="header">Status</span>
-                <span class="response data"><?php echo $data['status'] ?></span>
-                <?php
-            }else{
-                ?>
-                <span class="header">Tanggapan</span>
-                <span class="response data empty">Belum Ditanggapi</span>
-
-                <?php
-            }
-
-            ?>
-
-            
-            <span class="header">Action</span>
-            <div class="action">
-                <a href="./inbox.php" class="button">Back</a>
-                <a href="./inbox.php" class="button">Cetak</a>
+            <div class="complaint-input-category date-group" style="display: block;">
+                <span style="display:block;" class="title-info">Tanggal</span>
+                <input type="text" class="date-picker-x-input" name="date"
+                    readonly value="<?php echo $data['date'] ?>" placeholder="Masukkan tanggal kejadian*" />
+                </div>
+            <div class="complaint-input-category">
+                <span style="display:block;" class="title-info">NIK</span>
+                <input readonly value="<?php echo $data['nik'] ?>" placeholder="Masukkan judul laporan anda*" name="nik" required="true" type="text"
+                    class="input-form" />
             </div>
-        </div>
-<?php
+            <div class="complaint-input-category">
+                <span style="display:block;" class="title-info">Report</span>
+                <input readonly value="<?php echo $data['report'] ?>" placeholder="Masukkan isi laporan anda*" name="title" required="true" type="text"
+                    class="input-form"></input>
+            </div>
+            <div class="complaint-input-category">
+                <span style="display:block;" class="title-info">Photo</span>
+                <img src="../../server/data/img/<?php echo $data['photo'] ?>" name="photo" required="true" alt="photo"
+                class="image-form" >
+            </div>
+            <div class="complaint-input-category">
+                <span style="display:block;" class="title-info">Status</span>
+                <input readonly value="<?php echo $data['status'] ?>" placeholder="Masukkan judul laporan anda*" name="status" required="true"
+                type="text" class="input-form" />
+            </div>
+           
+            <div class="form-button back">
+                <a href="./verify.php" name="back" class="button" value="submit">Back
+                    </a>
+                    
+                </div>
+            </form>
+<?php   
                 }
                 }catch(Exception $e){
                     
@@ -83,10 +83,8 @@ if(isset($_GET['id'])){
         ?>
 </body>
 </html>
-
 <?php
-
 }else{
-    header('location:./'.$_SESSION['page']);
+    header('location:./inbox.php');
 }
 ?>

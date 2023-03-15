@@ -10,6 +10,8 @@ $mysqli = new mysqli($host, $user, $password, $db);
 
 if ($mysqli->connect_errno) {
     throw new RuntimeException('mysqli connection error: ' . $mysqli->connect_error);
+}else{
+    // printf('success connected to databse...');
 }
 
 $mysqli->set_charset('utf8mb4');
