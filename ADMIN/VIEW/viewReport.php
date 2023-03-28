@@ -1,4 +1,5 @@
 <?php
+    require_once('../../BASE/authAdmin.php');
 if (session_status() == 0 || session_status() == 1) {
     session_start();
 }
@@ -23,7 +24,6 @@ if (isset($_GET['id'])) {
 
         <main>
             <?php
-            require_once('../../BASE/authAdmin.php');
             require_once('../../BASE/connection.php');
             $id = $_GET['id'];
             $sql = "SELECT r1.*, r2.response, r2.date FROM report as r1 LEFT JOIN response as r2 ON r1.id_report = r2.id_report WHERE r1.id_report = '$id';";
@@ -38,7 +38,7 @@ WHERE r1.id_report = '$id';
                 while ($data = $result->fetch_assoc()) {
 
                     ?>
-                    <form action="../LOGIC/report.php" method="post" enctype="multipart/form-data">
+                    <form action="../LOGIC/response.php" method="post" enctype="multipart/form-data">
                         <h1 class="title">Informasi Laporan</h1>
                         <div class="complaint-input-category">
                             <span style="display:block;" class="title-info">ID</span>

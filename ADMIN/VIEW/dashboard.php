@@ -2,6 +2,7 @@
     if(session_status() != 2){
         session_start();
     }
+    require_once('../../BASE/authAdmin.php');
 
 ?>
 
@@ -19,7 +20,6 @@
 <body>
     <?php
         require_once('./COMPONENT/sidebar.php');
-        require_once('../../BASE/authAdmin.php');
     ?>
     <main>
         <?php

@@ -25,7 +25,6 @@ if (isset($_GET['id'])) {
             require_once('../../BASE/auth.php');
             require_once('../../BASE/connection.php');
             $id = $_GET['id'];
-            $sql = "SELECT r1.*, r2.response, r2.date FROM report as r1 LEFT JOIN response as r2 ON r1.id_report = r2.id_report WHERE r1.id_report = '$id';";
             $sql = "SELECT r1.*, r2.response, r2.date as response_date
 FROM report as r1 
 LEFT JOIN response as r2 ON r1.id_report = r2.id_report

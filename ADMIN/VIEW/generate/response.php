@@ -1,11 +1,10 @@
-
 <?php
 // require_once('../../BASE/authAdmin.php');
 require_once('../../BASE/connection.php');
 
 session_start();
 $show = false;
-$sql = "SELECT * FROM `report` WHERE `status` = 'pending'";
+$sql = "SELECT * FROM `response`";
 if ($data = $mysqli->query($sql)) {
     $package = array();
     $show = true;
@@ -27,7 +26,7 @@ if ($data = $mysqli->query($sql)) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Verifikasi Dan Validasi</title>
+    <title>Community</title>
     <link rel="stylesheet" href="./ASSETS/CSS/table.css">
     <link rel="stylesheet" href="./ASSETS/CSS/reset.css">
     <link rel="stylesheet" href="./ASSETS/CSS/main.css">
@@ -40,7 +39,7 @@ if ($data = $mysqli->query($sql)) {
 
 ?>
     <main class="container">
-        <h1>Verifikasi & Validasi Laporan</h1>
+        <h1>Data Tanggapan</h1>
         <?php
         if ($show && count($package) != 0) {
             $i = 0;
@@ -48,14 +47,12 @@ if ($data = $mysqli->query($sql)) {
             <table class="styled-table">
                 <thead>
                     <tr>
-                        <th>ID</th>
+                        <th>ID Response</th>
+                        <th>ID Report</th>
                         <th>Date</th>
-                        <th>Nik</th>
-                        <th>Title</th>
-                        <th>Report</th>
-                        <th>Photo</th>
-                        <th>Status</th>
-                        <th>Operasi</th>
+                        <th>Response</th>
+                        <th>ID Staff</th>
+                        <th colspan="2">Operasi</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -64,16 +61,13 @@ if ($data = $mysqli->query($sql)) {
                             ?>
                             <tr>
                             
+                                <td><?php echo $package[$key]['id_response'] ?></td>
                                 <td><?php echo $package[$key]['id_report'] ?></td>
                                 <td><?php echo $package[$key]['date'] ?></td>
-                                <td><?php echo $package[$key]['nik'] ?></td>
-                                <td><?php echo $package[$key]['title'] ?></td>
-                                <td><?php echo $package[$key]['report'] ?></td>
-                                <td><img class="photo" src="../../server/data/img/<?php echo $package[$key]['photo'] ?>" alt="photo"></td>
-                                <td><?php echo $package[$key]['status'] ?></td>                        
-           
-                                <td><a  onclick="return confirm('verifikasi laporan ini?');" class="operation-link" href="./verifyReport.php?id=<?php echo $package[$key]['id_report'] ?>" >Verify & Validate</a></td>
-
+                                <td><?php echo $package[$key]['response'] ?></td>
+                                <td><?php echo $package[$key]['id_staff'] ?></td>
+                                <td><a class="operation-link" href="edit_community.php?id=<?php echo $package[$key]['id_response'] ?>">edit</a></td>
+                                <td><a class="operation-link" href="remove_community.php?id=<?php echo $package[$key]['id_response'] ?>">remove</a></td>
                             </tr>
                             
                             
@@ -82,15 +76,13 @@ if ($data = $mysqli->query($sql)) {
                         } else { ?>
                         <tr class="active-row">
                        
-                           <td><?php echo $package[$key]['id_report'] ?></td>
+                            <td><?php echo $package[$key]['id_response'] ?></td>
+                                <td><?php echo $package[$key]['id_report'] ?></td>
                                 <td><?php echo $package[$key]['date'] ?></td>
-                                <td><?php echo $package[$key]['nik'] ?></td>
-                                <td><?php echo $package[$key]['title'] ?></td>
-                                <td><?php echo $package[$key]['report'] ?></td>
-                                <td><img class="photo" src="../../server/data/img/<?php echo $package[$key]['photo'] ?>" alt="photo"></td>
-                                <td><?php echo $package[$key]['status'] ?></td>
-                               
-                                <td><a  onclick="return confirm('verifikasi laporan ini?');" class="operation-link"href="./verifyReport.php?id=<?php echo $package[$key]['id_report'] ?>">Verify & Validate</a></td>
+                                <td><?php echo $package[$key]['response'] ?></td>
+                                <td><?php echo $package[$key]['id_staff'] ?></td>
+                                <td><a class="operation-link"href="edit_community.php?id=<?php echo $package[$key]['id_response'] ?>">Edit</a></td>
+                                <td><a class="operation-link"href="remove_community.php?id=<?php echo $package[$key]['id_response'] ?>">Remove</a></td>
                             </tr>
 
 
@@ -103,7 +95,8 @@ if ($data = $mysqli->query($sql)) {
             <?php
         } else {
             ?>
-            <div class="box"><span class="empty">Data Kosong</span></div>
+            <div class="box"><span class="empty">Data Kosong</span>
+            </div>
             <?php
         }
         ?>

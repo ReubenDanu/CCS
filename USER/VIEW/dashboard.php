@@ -7,6 +7,12 @@
     <title>Dashboard</title>
     <link rel="stylesheet" href="./ASSETS/CSS/dashboard.css">
 </head>
+<style>
+
+    main{
+        background-image: url('../../server/data/img/cool-bg.png');
+    }
+</style>
 <body>
     <?php
         require_once('../../BASE/auth.php');
@@ -27,10 +33,16 @@
                 </span>
             </p>
         </div>
-        <h1 class="title">
-            Mulai Laporan Anda Sekarang.
+
+        <h1 class="title" >
+            Aplikasi Pengaduan Masyarakat Bantul.
         </h1>
         <div>
+            <!-- <img src="../../server/data/img/cool-bg.png" style="position: absolute;
+max-width: 100%;
+width: 50%;
+z-index: -10;
+top: -250px;" alt="photo"> -->
             <a href="./report.php">Buat Laporan Baru?</a>
             <a href="./inbox.php">Check Progress Laporan Anda?</a>
         </div>

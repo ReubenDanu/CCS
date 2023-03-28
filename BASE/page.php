@@ -1,5 +1,7 @@
 <?php
-session_start();
+if(session_status() != 2){
+    session_start();
+}
 if(array_search('LOGIC',explode('/',$_SERVER['REQUEST_URI'])) == false){
     $page = $_SERVER['REQUEST_URI'];
     $pathURL = $page;

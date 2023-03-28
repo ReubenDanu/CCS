@@ -1,10 +1,12 @@
 <?php
 // require_once('../../BASE/authAdmin.php');
-require_once('../../BASE/connection.php');
+require_once('../../../BASE/connection.php');
 
 session_start();
 $show = false;
-$sql = "SELECT * FROM `report`";
+$sql = "SELECT r1.*, r2.response, r2.date as response_date
+FROM report as r1 
+LEFT JOIN response as r2 ON r1.id_report = r2.id_report";
 if ($data = $mysqli->query($sql)) {
     $package = array();
     $show = true;
@@ -27,19 +29,51 @@ if ($data = $mysqli->query($sql)) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Community</title>
-    <link rel="stylesheet" href="./ASSETS/CSS/table.css">
-    <link rel="stylesheet" href="./ASSETS/CSS/reset.css">
-    <link rel="stylesheet" href="./ASSETS/CSS/main.css">
-    <link rel="stylesheet" href="./ASSETS/CSS/data.css">
+    <link rel="stylesheet" href="../ASSETS/CSS/table.css">
+    <link rel="stylesheet" href="../ASSETS/CSS/reset.css">
+    <link rel="stylesheet" href="../ASSETS/CSS/main.css">
+    <link rel="stylesheet" href="../ASSETS/CSS/data.css">
 </head>
+<style>
+    main{
+        width: 100%;
+    }
+    .box img{
+        width: 150px
+    }
+    .box .inner-box h1:nth-child(2){
+        font-size: 1rem;
+    }
+.box{
+    margin: auto;
+    margin-bottom: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+</style>
 
 <body>
     <?php
-    require_once('./COMPONENT/sidebar.php');
 
 ?>
     <main class="container">
-        <h1>Data Laporan</h1>
+
+        <div class="container">
+            <div class="box">
+                <img src="../assets/image/trirenggo.png" alt="photo"/>
+                <div class="inner-box">
+                    <h1>Kapanewon Trirenggo</h1>
+                    <h1>Daerah Istimewa Yogyakarta
+Jl. Ir. H. Juanda No.17, Bantul, Yogyakarta</h1>
+                </div>
+
+            </div>
+            <h1>Laporan Pengaduan Masyarakat</h1>
+        </div>
         <?php
         if ($show && count($package) != 0) {
             $i = 0;
@@ -54,7 +88,8 @@ if ($data = $mysqli->query($sql)) {
                         <th>Report</th>
                         <th>Photo</th>
                         <th>Status</th>
-                        <th colspan="2">Operation</th>
+                        <th>Tanggapan</th>
+                        <th>Tanggal Tanggapan</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -68,11 +103,11 @@ if ($data = $mysqli->query($sql)) {
                                 <td><?php echo $package[$key]['nik'] ?></td>
                                 <td><?php echo $package[$key]['title'] ?></td>
                                 <td><span class="report"><?php echo $package[$key]['report'] ?></span></td>
-                                <td><img class="photo" src="../../server/data/img/<?php echo $package[$key]['photo'] ?>" alt="photo" ></td>
+                                <td><img class="photo" style="width: 700px" src="../../server/data/img/<?php echo $package[$key]['photo'] ?>" alt="photo" ></td>
                                 <td><?php echo $package[$key]['status'] ?></td>
-                                  <td><a class="operation-link" href="editReport.php?id=<?php echo $package[$key]['id_report'] ?>">edit</a></td>
-                                <td><a class="operation-link" href="remove_report.php?id=<?php echo $package[$key]['id_report'] ?>">remove</a></td>
-                                        </tr>
+                                <td><span class="response"><?php echo $package[$key]['response'] ?></span></td>
+                                <td><?php echo $package[$key]['response_date'] ?></td>
+                            </tr>
                                        <?php
                         } else { ?>
                         <tr class="active-row">
@@ -82,17 +117,16 @@ if ($data = $mysqli->query($sql)) {
                                 <td><?php echo $package[$key]['nik'] ?></td>
                                 <td><?php echo $package[$key]['title'] ?></td>
                                 <td><span class="report"><?php echo $package[$key]['report'] ?></span></td>
-                                <td><img class="photo" src="../../server/data/img/<?php echo $package[$key]['photo'] ?>" alt="photo" ></td>
+                                <td><img class="photo" style="width: 700px" src="../../../server/data/img/<?php echo $package[$key]['photo'] ?>" alt="photo" ></td>
                                 <td><?php echo $package[$key]['status'] ?></td>
-                                 <td><a class="operation-link" href="editReport.php?id=<?php echo $package[$key]['id_report'] ?>">edit</a></td>
-                                <td><a class="operation-link" href="remove_report.php?id=<?php echo $package[$key]['id_report'] ?>">remove</a></td>
-                                        </tr>
+                                <td><span class="response"><?php echo $package[$key]['response'] ?></span></td>
+                                <td><?php echo $package[$key]['response_date'] ?></td>
+                            </tr>
 
 
                                    <?php
                         }
                     } ?>
-                    <!-- and so on... -->
                 </tbody>
             </table>
             <?php
@@ -104,7 +138,6 @@ if ($data = $mysqli->query($sql)) {
         ?>
     </main>
       <?php
-    require_once('./COMPONENT/footer.php.html');
 
     ?>
 </body>

@@ -1,4 +1,5 @@
 <?php
+    require_once('../../BASE/authAdmin.php');
 if (session_status() == 0 || session_status() == 1) {
     session_start();
 }
@@ -23,10 +24,8 @@ if (isset($_GET['id'])) {
 
         <main>
             <?php
-            require_once('../../BASE/authAdmin.php');
             require_once('../../BASE/connection.php');
             $id = $_GET['id'];
-            $sql = "SELECT r1.*, r2.response, r2.date FROM report as r1 LEFT JOIN response as r2 ON r1.id_report = r2.id_report WHERE r1.id_report = '$id';";
             $sql = "SELECT r1.*, r2.response, r2.date as response_date
 FROM report as r1 
 LEFT JOIN response as r2 ON r1.id_report = r2.id_report
@@ -38,12 +37,12 @@ WHERE r1.id_report = '$id';
                 while ($data = $result->fetch_assoc()) {
 
                     ?>
-                    <form action="../LOGIC/report.php" method="post" enctype="multipart/form-data">
-                        <h1 class="title">Informasi Laporan</h1>
+                    <form action="../LOGIC/response.php" method="post" enctype="multipart/form-data">
+                        <h1 class="title">Tanggapi Laporan</h1>
                         <div class="complaint-input-category">
                             <span style="display:block;" class="title-info">ID</span>
                             <input readonly value="<?php echo $data['id_report'] ?>" placeholder="Masukkan judul laporan anda*"
-                                name="id" required="true" type="text" class="input-form" />
+                                name="id_report" required="true" type="text" class="input-form" />
                         </div>
                         <div class="complaint-input-category date-group" style="display: block;">
                             <span style="display:block;" class="title-info">Date</span>
@@ -73,12 +72,12 @@ WHERE r1.id_report = '$id';
 
                             <div class="complaint-input-category">
                                 <span style="display:block;" class="title-info">Response</span>
-                                <input placeholder="Masukkan Tanggapan anda*"
-                                    name="response" required="true" type="text" class="input-form" />
+                                <textarea placeholder="Masukkan Tanggapan anda*"
+                                    name="response" required="true" type="text" class="input-form"></textarea>
                             </div>
                             <div class="complaint-input-category">
                                 <span style="display:block;" class="title-info">Date Response</span>
-                                 <input type="text" class="date-picker-x-input" name="date" readonly value="<?php echo date('Y-m-d') ?>"
+                                 <input type="text" class="date-picker-x-input" name="date_response" readonly value="<?php echo date('Y-m-d') ?>"
                                 placeholder="Masukkan tanggal kejadian*" />
                             </div>
 
